@@ -1,0 +1,81 @@
+/* 4 Dada una lista de numeros enteros todos distintos entre si
+yque finaliza con un cero, determinar e informar con un cartel
+si los numeros primos que aparecen en la misma estan ordenados de menor a mayor
+ o desordenados*/
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n, cGeneral, cPrime, primeEval, i, j, maxPrime, prime , contador , bPrime;
+    bool b;
+
+     bPrime=false;
+     cPrime=0;
+     contador=0;
+     cGeneral=0;
+
+     cin >> n;
+
+    while(n!=0){
+
+    primeEval=0;
+
+        for(j=1;j<=n;j++){
+
+            if(n%j==0){
+
+                    primeEval++;
+
+                }
+            }
+
+            if (primeEval==2) {
+
+                prime=n;
+                cPrime++;
+
+            }if(bPrime==false){
+
+                maxPrime=n;
+                bPrime=true;
+                contador++;
+
+            }else{
+
+                if(n>maxPrime){
+
+                    maxPrime=n;
+                    contador++;
+
+                }
+
+            }
+
+            cGeneral++;
+
+
+    cin >> n;
+    }
+
+        if(cGeneral==contador){
+
+            cout << "Ordenados" << endl;
+
+
+        }else{
+
+            cout << "Desordenados" << endl;
+
+        }
+
+
+
+    cout << "Cantidad de primos: " << cPrime;
+    cout << "el primo es: " << prime;
+
+
+return 0;
+
+}
+
+
